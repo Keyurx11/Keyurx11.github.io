@@ -1,0 +1,127 @@
+body {
+    font-family: "Helvetica Neue", Helvetica;
+    height: 100%;
+    min-height: 100vw;
+    background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #EF629F, #EECDA3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+    font-family: 'Pacifico', Helvetica;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 10px;
+    text-decoration: underline;
+    color: black;
+}
+
+#textBox {
+    margin-left: 10px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    opacity: 0.6;
+}
+
+#textBox:focus,
+input:focus {
+    color: black;
+}
+
+/*Class mb-3 is div that contains textBox and Enter button*/
+.mb-3 {
+    max-width: 20%;
+    min-width: 320px;
+}
+
+#enterBtn {
+    background-color: black;
+    color: #ffe5ec;
+}
+
+#enterBtn:hover {
+    background-color: #6B0015;
+    color: white;
+}
+
+li {
+    list-style: none;
+    font-size: 150%;
+    color: black;
+}
+
+li:hover {
+    color: #fff0f4;
+
+}
+
+.strike {
+    text-decoration: line-through;
+    color: #474747;
+}
+
+.deleteBtn {
+    background-color: transparent;
+    border-style: none;
+}
+
+.deleteBtn:hover {
+    color: #a01328;
+}
+
+#deleteAllBtn {
+    color: #ffdbe4;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#deleteAllBtn:hover {
+    background-color: #a01328;
+    color: #fff0f4;
+}
+
+
+#right {
+    font-weight: bold;
+    text-align: right;
+    position: fixed;
+    font-size: clamp(8px, 1.5vw, 15px);
+    Width: 100%;
+    bottom: 0;
+    padding-bottom: 4px;
+    padding-right: 20px;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+#left {
+    font-weight: bold;
+    text-align: left;
+    position: fixed;
+    font-size: clamp(8px, 1.5vw, 15px);
+    max-width: 50%;
+    bottom: 0;
+    padding-bottom: 4px;
+    padding-left: 20px;
+}
+
+/*Class box is for the div that contains all the elements and buttons*/
+.box {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 50px;
+}
+
+ul {
+    max-width: 340px;
+}
