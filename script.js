@@ -5,6 +5,7 @@ var nameGradient = document.getElementById('nameGradient')
 var randomizerBtn = document.getElementById('randomizerBtn')
 var slider = document.getElementById('myRange')
 var currentSliderValue = document.getElementById('currentSliderValue')
+var customAngle = document.getElementById('customAngle');
 
 function colorInput() {
     body.style.background = "linear-gradient(" +
@@ -67,13 +68,38 @@ function randomizeAngle() {
         color2.value +
         ")";
 
+    customAngle.value = slider.value;
 }
 
+
+function customAngleRot() {
+
+    if (customAngle.value <= 360 && customAngle.value >= 0) {
+        body.style.background = "linear-gradient(" +
+            customAngle.value + "deg, " +
+            color1.value +
+            ", " +
+            color2.value +
+            ")";
+
+        nameGradient.innerHTML = "linear-gradient(" +
+            customAngle.value + "deg, " +
+            color1.value +
+            ", " +
+            color2.value +
+            ")";
+
+        slider.value = customAngle.value;
+    } else {
+        alert("Please Input between 0 to 360")
+    }
+}
 
 color1.addEventListener("input", colorInput);
 color2.addEventListener("input", colorInput);
 randomizerBtn.addEventListener("click", randomizeColor);
 slider.addEventListener("input", randomizeAngle);
+customAngle.addEventListener("input", customAngleRot);
 
 
 var span = document.querySelector("span");
