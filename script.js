@@ -1,125 +1,93 @@
-var textBox = document.getElementById("textBox");
-var enterBtn = document.getElementById("enterBtn");
-var ul = document.querySelector("ul");
-var li = document.getElementsByClassName("li");
-var checkBox = document.getElementsByClassName("checkBox");
-var deleteBtn = document.getElementsByClassName("deleteBtn");
-var deleteAllBtn = document.getElementById("deleteAllBtn");
+var color1 = document.querySelector('.color1');
+var color2 = document.querySelector('.color2')
+var body = document.getElementById('body')
+var nameGradient = document.getElementById('nameGradient')
+var randomizerBtn = document.getElementById('randomizerBtn')
+var slider = document.getElementById('myRange')
+var currentSliderValue = document.getElementById('currentSliderValue')
 
+function colorInput() {
+    body.style.background = "linear-gradient(" +
+        slider.value + "deg, " +
+        color1.value +
+        ", " +
+        color2.value +
+        ")";
 
-// Functions *********************
-
-// TEXTBOX - press enter key to add an item to list *********************
-function textBoxFunction()
-{
-    if (event.keyCode === 13 && textBox.value.length > 0)
-    {
-        addNewItemToList();
-        textBox.value = "";
-    }
-    else if (event.keyCode === 13)
-    {
-        alert("Please enter an item to-do!");
-    }
+    nameGradientDisplay();
 }
 
-// ENTER BUTTON - click the enter button to add item to list *********************
-function enterBtnFunction()
-{
-    if (textBox.value.length > 0)
-    {
-        addNewItemToList();
-        textBox.value = "";
+function nameGradientDisplay() {
+    nameGradient.innerHTML = "linear-gradient(" +
+        slider.value + "deg, " +
+        color1.value +
+        ", " +
+        color2.value +
+        ")";
+}
+
+nameGradientDisplay();
+
+function randomizeColor() {
+    var randomColor1 = "#000000".replace(/0/g, function() {
+        return (~~(Math.random() * 16)).toString(16);
+    });
+    var randomColor2 = "#000000".replace(/0/g, function() {
+        return (~~(Math.random() * 16)).toString(16);
+    });
+
+    body.style.background = "linear-gradient(" +
+        slider.value + "deg, " +
+        randomColor1 +
+        ", " +
+        randomColor2 +
+        ")";
+
+    color1.value = randomColor1
+    color2.value = randomColor2
+
+    nameGradientDisplay();
+}
+
+
+function randomizeAngle() {
+
+    // alert(slider.value);
+    body.style.background = "linear-gradient(" +
+        slider.value + "deg, " +
+        color1.value +
+        ", " +
+        color2.value +
+        ")";
+
+    nameGradient.innerHTML = "linear-gradient(" +
+        slider.value + "deg, " +
+        color1.value +
+        ", " +
+        color2.value +
+        ")";
+
+}
+
+
+color1.addEventListener("input", colorInput);
+color2.addEventListener("input", colorInput);
+randomizerBtn.addEventListener("click", randomizeColor);
+slider.addEventListener("input", randomizeAngle);
+
+
+var span = document.querySelector("span");
+
+span.onclick = function() {
+    document.execCommand("copy");
+}
+
+span.addEventListener("copy", function(event) {
+    event.preventDefault();
+    if (event.clipboardData) {
+        event.clipboardData.setData("text/plain", span.textContent);
+        console.log(event.clipboardData.getData("text"))
+    } {
+        alert("Copied:" + span.innerHTML);
     }
-    else
-    {
-        alert("Please enter an item to-do!");
-    }
-}
-
-// DELETE ALL BUTTON - click the Delete ALl Items button to remove all items from the list *********************
-function deleteAllBtnFunction()
-{
-    ul.innerHTML = "";
-}
-
-
-// CHECKBOX - click on checkbox to strike the item off list *********************
-function checkBoxFunction()
-{
-    for (var i = 0; i < checkBox.length; i++)
-    {
-        checkBox[i].onclick = function ()
-        {
-            this.parentNode.classList.toggle("strike");
-        }
-    }
-}
-
-// LIST ELEMENT - click on element to strike the item off list (OPTIONAL & ONLY if the checkbox not in use) *********************
-// function listElementFunction() {
-// for(var i = 0; i < li.length; i++) {
-//  li[i].onclick = function() {
-//      this.classList.toggle("strike");
-//  }}
-// }
-
-
-// DELETE BUTTON - click the delete button to delete the list item *********************
-function deleteBtnFunction()
-{
-    for (var i = 0; i < deleteBtn.length; i++)
-    {
-        deleteBtn[i].onclick = function ()
-        {
-            this.parentNode.parentNode.removeChild(this.parentNode);
-        }
-    }
-}
-
-// Adding New Items to List - adding list element with checkbox and delete button *********************
-function addNewItemToList()
-{
-
-    var newLi = document.createElement("li");
-    var innerLi = document.createTextNode(" " + textBox.value + " ");
-    newLi.className = "li";
-
-    var createCheckBox = document.createElement("input");
-    createCheckBox.type = "checkbox";
-    createCheckBox.className = "checkBox";
-
-    var createDeleteButton = document.createElement("button");
-    // var nameButtonDelete = document.createTextNode("Delete");
-    // createDeleteButton.appendChild(nameButtonDelete);
-    createDeleteButton.className = "deleteBtn";
-
-
-    var createTrashIcon = document.createElement("i");
-    createTrashIcon.className = "fa fa-trash";
-    createDeleteButton.appendChild(createTrashIcon);
-
-
-    newLi.appendChild(createCheckBox);
-    newLi.appendChild(innerLi);
-    newLi.appendChild(createDeleteButton);
-
-    ul.appendChild(newLi);
-
-    deleteBtnFunction();
-    checkBoxFunction();
-    // listElementFunction();
-}
-
-deleteBtnFunction();
-checkBoxFunction();
-// listElementFunction();
-
-// End of Functions *********************
-
-
-// Event Listeners *********************
-textBox.addEventListener("keypress", textBoxFunction);
-enterBtn.addEventListener("click", enterBtnFunction);
-deleteAllBtn.addEventListener("click", deleteAllBtnFunction);
-// End of Event Listeners *********************
+});
