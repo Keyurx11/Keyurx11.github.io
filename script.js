@@ -6,6 +6,7 @@ var randomizerBtn = document.getElementById('randomizerBtn')
 var slider = document.getElementById('myRange')
 var currentSliderValue = document.getElementById('currentSliderValue')
 
+
 function colorInput() {
     body.style.background = "linear-gradient(" +
         slider.value + "deg, " +
@@ -76,6 +77,7 @@ randomizerBtn.addEventListener("click", randomizeColor);
 slider.addEventListener("input", randomizeAngle);
 
 
+// Copy Paste
 var span = document.querySelector("span");
 
 span.onclick = function() {
