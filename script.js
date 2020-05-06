@@ -67,8 +67,6 @@ function previewBtnFunction()
         }}
 }
 
-previewBtnFunction();
-
 function colorInput() {
     body.style.background = "linear-gradient(" +
         slider.value + "deg, " +
@@ -163,6 +161,7 @@ randomizerBtn.addEventListener("click", randomizeColor);
 slider.addEventListener("input", randomizeAngle);
 customAngle.addEventListener("input", customAngleRot);
 saveGradient.addEventListener("click", addGradientToList);
+previewBtnFunction.addEventListener("click", previewBtnFunction);
 
 
 
