@@ -6,7 +6,7 @@
 #main {
     width: 100%;
     height: 100vh;
-    padding-top: 50px;
+    padding-top: 60px;
     padding-bottom: 100px;
     background: linear-gradient(90deg, #00c9ff, #92fe9d);
 
@@ -114,7 +114,7 @@ span:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: -50px;
+    margin-left: -40px;
 }
 
 
