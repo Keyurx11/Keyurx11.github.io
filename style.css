@@ -1,11 +1,12 @@
 .container {
     text-align: center;
+    font-family: Raleway;
 }
 
 #main {
     width: 100%;
     height: 100vh;
-    padding-top: 45px;
+    padding-top: 50px;
     padding-bottom: 100px;
     background: linear-gradient(90deg, #00c9ff, #92fe9d);
 
@@ -39,6 +40,11 @@ h1 {
     padding-top: 50px;
     text-decoration: underline;
     font-weight: bold;
+    font-family: Pacifico;
+}
+
+h3 {
+    font-family: Pacifico;
 }
 
 .colorCodeContainer {
@@ -62,7 +68,7 @@ span:hover {
     color: black !important;
     border-radius: 5px !important;
     border: 1px solid black !important;
-    padding-top: 1px !important;
+    padding-top: 3px !important;
 }
 
 .btn:hover {
@@ -83,8 +89,12 @@ span:hover {
     padding-top: 20px;
 }
 
-#randomizerBtn {
+.color1 {
     margin-top: 5px;
+}
+
+#randomizerBtn {
+    margin-top: 7px;
 }
 
 #customAngle {
