@@ -10,31 +10,64 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
+
+
+
+
 <body id="body">
-    <h1>Gradient Background Generator</h1>
-    <h3>Color Code</h3>
-    <span id="nameGradient"></span>   <button id="saveGradient">Add to Favourites</button><br><br>
-    <input type="color" class="color1" value="#00C9FF">
-    <input type="color" class="color2" value="#92FE9D"><br><br>
-    <button id="randomizerBtn">Randomize</button>
 
-    <div class="slidecontainer">
-        <h3>Change Gradient Angle</h3>
-        0<input type="range" min="0" max="360" value="90" class="slider" id="myRange">360
-        <input type="number" id="customAngle" min="0" max="360" value="90"><br><br><br><br>
 
-        <h3>Favourite Gradients</h3>
-        <ul id="ul">
-            <!-- <li class="li"><p class="cssCode">linear-gradient(50deg, #1c8381, #b2046c)</p><button class="previewBtn">Preview</button>
- -->        </ul>
-        <button id="deleteAllBtn"><i class="fa fa-trash"></i> Clear All</button>
-        <!-- <p id="right"><a href="https://twitter.com/Keyurx11" target="blank">Coded by Keyurx11</a></p>
-        <p id="left"><a href="https://github.com/Keyurx11/gradient-background-generator" target="blank">Link to the source code</a></p> -->
+    <div id="main">
+        <div class="container">
+
+            <!-- <ul class="nav justify-content-center"> -->
+            <p id="right" class="nav-item"><a class="nav-link" href="https://twitter.com/Keyurx11" target="blank">Coded by Keyurx11</a></p>
+            <p id="left" class="nav-item"><a class="nav-link" href="https://github.com/Keyurx11/gradient-background-generator" target="blank">Link to the source code</a></p>
+            <!-- </ul> -->
+
+            <h1>Gradient Background Generator</h1>
+            <br>
+            <h3>Color Code</h3>
+            <span id="nameGradient"></span><br>
+            <!--  <button id="copyCss" class="btn btn-primary btn-sm cssCodeBtns">Copy CSS Code</button> -->
+            <button id="saveGradient" class="btn btn-primary btn-sm cssCodeBtns">Add to Favourites <i class="fa fa-heart"></i></button>
+            <p id="yourFav" class=""><a class="nav-link" href="#Fav">View Favourites</a></p>
+
+            <input type="color" class="color1" value="#00C9FF">
+            <input type="color" class="color2" value="#92FE9D"><br>
+            <button id="randomizerBtn" class="btn btn-primary btn-sm">Randomize</button>
+            <br><br>
+            <div class="slidecontainer">
+                <h3>Change Gradient Angle</h3>
+                <input type="range" min="0" max="360" value="90" class="slider" id="myRange">
+                <input type="number" id="customAngle" min="0" max="360" value="90">
+                <br><br>
+            </div>
+        </div>
     </div>
 
+
+    <div id="fav">
+        <h3 id="yourFav">Favourite Gradients</h3>
+
+        <ul id="ul">
+            <!-- <li class="li">
+                    <p class="cssCode">linear-gradient(50deg, #1c8381, #b2046c)</p>
+                    <button class="previewBtn">Preview</button>
+                 </li > -->
+        </ul>
+
+        <button id="deleteAllBtn" class="btn btn-primary btn-sm"><i class="fa fa-trash"></i> Clear All</button>
+    </div>
+
+    <!--  <div id="previewContainer">
+    </div> -->
+
     <script type="text/javascript" src="script.js"></script>
+
 </body>
 
 

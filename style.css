@@ -1,62 +1,157 @@
-body {
+.container {
     text-align: center;
-    padding-top: 50px;
-    background: linear-gradient(90deg, #00C9FF, #92FE9D);
-    height: 100vh;
-    font-family: 'Raleway', sans-serif;
 }
 
-span {
-    padding: 2px;
-    text-decoration: underline;
+#main{
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 100px;
+    background: linear-gradient(90deg, #00c9ff, #92fe9d);
+
+}
+.nav-link {
+    color: black;
 }
 
-span:hover {
-    box-shadow: 1px 1px 3px;
-    cursor: pointer;
+#right {
+    font-weight: bold;
+    text-align: right;
+    position: fixed;
+    font-size: clamp(8px, 1.5vw, 13px);
+    Width: 30%;
+    top: 0;
+    right: 0;
+    padding-top: 5px;
+    
+}
+
+
+#left {
+    font-weight: bold;
+    text-align: left;
+    position: fixed;
+    font-size: clamp(8px, 1.5vw, 13px);
+    width: 30%;
+    top: 0;
+    left: 0;
+    padding-top: 5px;
 }
 
 h1 {
+    padding-top: 30px;
     text-decoration: underline;
     font-weight: bold;
 }
 
-
-#randomizerBtn, #saveGradient{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: transparent;
-    border-radius: 5px;
-    border: 1px solid black;
+span {
+    box-shadow: 1px 1px 2px;
+    padding: 6px;
 }
 
-#randomizerBtn:hover {
+span:hover {
     box-shadow: 1px 1px 3px;
-}
-
-#saveGradient {
-
-}
-
-#saveGradient:hover {
-    box-shadow: 1px 1px 3px;
-}
-
-
-a {
-    color: black;
     text-decoration: underline;
-}
-
-a:hover {
-    color: blue;
+    cursor: pointer;
 }
 
 li {
     list-style: none;
-    padding-left: 0px;
 }
 
-.strike {
-    text-decoration: line-through;
+.btn{
+    background-color: transparent!important;
+    color: black!important;
+    border-radius: 5px!important;
+    border: 1px solid black!important;
+    padding-top: 1px!important;
+}
+
+.btn:hover {
+    box-shadow: 1px 1px 3px!important;
+}
+
+.cssCodeBtns {
+    margin-top: 10px;
+}
+
+#yourFav {
+    text-decoration: underline;;
+}
+
+.btn{
+    background-color: transparent!important;
+    color: black!important;
+    border-radius: 5px!important;
+    border: 1px solid black!important;
+    padding-top: 1px!important;
+}
+
+.btn:hover {
+    box-shadow: 1px 1px 3px!important;
+}
+
+.cssCodeBtns {
+    margin-top: 10px;
+}
+
+#randomizerBtn {
+    margin-top: 5px;
+}
+ 
+#customAngle {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+}
+
+#fav {
+    background-color: white;
+    text-align: center;
+  
+}
+
+#ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -50px;
+}
+
+
+.li {
+    width: 350px;
+    height: 200px;
+    padding: 150px 15px 10px 15px;
+    margin: 10px;
+}
+
+/*.li:hover {
+    width: 100%;
+}
+*/
+
+.carousel-item{
+width: 100%;
+height: 350px;
+}
+
+#deleteAllBtn {
+    margin-bottom: 20px;
+}
+
+.previewBtn {
+    margin-bottom: 10px;
+}
+
+a {
+    color: black!important;
+}
+
+a:hover {
+    text-decoration: none!important;
+}
+
+#previewContainer {
+    width: 100%;
+    height: 500px;
 }

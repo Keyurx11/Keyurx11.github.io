@@ -9,6 +9,8 @@ var customAngle = document.getElementById('customAngle')
 var saveGradient = document.getElementById('saveGradient')
 var previewBtn = document.getElementsByClassName('previewBtn')
 var cssCode = document.getElementsByClassName('cssCode')
+var body = document.getElementById('main')
+var previewContainer = document.getElementById('previewContainer')
 
 // SAVE GRADIENTS
 var ul = document.getElementById('ul')
@@ -18,23 +20,26 @@ localStorage.setItem('items', JSON.stringify(itemsArray));
 var data = JSON.parse(localStorage.getItem('items'));
 
 var liMaker = (text) => {
+
   var li = document.createElement('li');
   // li.textContent = text;
-  li.className = "li";
+  li.className = "li displayFav";
+  li.style.background = text;
 
   var cssCode = document.createElement("p");
   cssCode.textContent = text;
   cssCode.className = "cssCode";
   li.appendChild(cssCode);
   
+  // var previewBtn = document.createElement('button')
+  // var namePreviewBtn = document.createTextNode('Preview')
+  // // previewBtn.setAttribute('href', "#previewContainer");
+  // previewBtn.appendChild(namePreviewBtn);
+  // previewBtn.className = "previewBtn btn btn-primary btn-sm";
 
-  var previewBtn = document.createElement('button')
-  var namePreviewBtn = document.createTextNode('Preview')
-  previewBtn.appendChild(namePreviewBtn);
-  previewBtn.className = "previewBtn";
-  li.appendChild(previewBtn);
-
+  // li.appendChild(previewBtn);
   ul.appendChild(li);
+  previewBtnFunction();
 }
 
 function addGradientToList() {
@@ -59,13 +64,16 @@ deleteAllBtn.addEventListener('click', function () {
 // End of Save GRADIENTS
 
 
+// FUNCTIONS
 function previewBtnFunction()
 {
     for (var i = 0; i < previewBtn.length; i++) {
         previewBtn[i].onclick = function () {
-            body.style.background = this.parentNode.childNodes[0].innerHTML;
+            previewContainer.style.background = this.parentNode.childNodes[0].innerHTML;
+
         }}
 }
+
 
 function colorInput() {
     body.style.background = "linear-gradient(" +
@@ -155,18 +163,21 @@ function customAngleRot() {
     }
 }
 
+
+
 color1.addEventListener("input", colorInput);
 color2.addEventListener("input", colorInput);
 randomizerBtn.addEventListener("click", randomizeColor);
 slider.addEventListener("input", randomizeAngle);
 customAngle.addEventListener("input", customAngleRot);
 saveGradient.addEventListener("click", addGradientToList);
-previewBtnFunction.addEventListener("click", previewBtnFunction);
 
 
 
-var span = document.querySelector("span");
 
+
+// FOR COPY PASTE
+var span = document.querySelector('span')
 span.onclick = function() {
     document.execCommand("copy");
 }
@@ -180,3 +191,22 @@ span.addEventListener("copy", function(event) {
         alert("Copied: " + span.innerHTML);
     }
 });
+
+
+var span = document.querySelector('span')
+span.onclick = function() {
+    document.execCommand("copy");
+}
+
+span.addEventListener("copy", function(event) {
+    event.preventDefault();
+    if (event.clipboardData) {
+        event.clipboardData.setData("text/plain", span.textContent);
+        console.log(event.clipboardData.getData("text"))
+    } {
+        alert("Copied: " + span.innerHTML);
+    }
+});
+
+
+
