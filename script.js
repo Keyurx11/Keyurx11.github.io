@@ -31,15 +31,18 @@ var liMaker = (text) => {
     cssCode.className = "cssCode";
     li.appendChild(cssCode);
 
-    // var previewBtn = document.createElement('button')
-    // var namePreviewBtn = document.createTextNode('Preview')
-    // // previewBtn.setAttribute('href', "#previewContainer");
-    // previewBtn.appendChild(namePreviewBtn);
-    // previewBtn.className = "previewBtn btn btn-primary btn-sm";
+    var createA = document.createElement('a')
+    createA.setAttribute('href', "#main");
 
-    // li.appendChild(previewBtn);
+    var previewBtn = document.createElement('button')
+    var namePreviewBtn = document.createTextNode('Preview')
+    previewBtn.appendChild(namePreviewBtn);
+    previewBtn.className = "previewBtn btn btn-primary btn-sm";
+
+    createA.appendChild(previewBtn);
+    li.appendChild(createA);
     ul.appendChild(li);
-    // previewBtnFunction();
+    previewBtnFunction();
 }
 
 function addGradientToList() {
@@ -157,13 +160,13 @@ function customAngleRot() {
 
 
 
-// function previewBtnFunction()
-// {
-//     for (var i = 0; i < previewBtn.length; i++) {
-//         previewBtn[i].onclick = function () {
-//             previewContainer.style.background = this.parentNode.childNodes[0].innerHTML;
-//         }}
-// }
+function previewBtnFunction() {
+    for (var i = 0; i < previewBtn.length; i++) {
+        previewBtn[i].onclick = function() {
+            body.style.background = this.parentNode.parentNode.childNodes[0].innerHTML;
+        }
+    }
+}
 
 
 
@@ -192,3 +195,29 @@ span.addEventListener("copy", function(event) {
         alert("Copied: " + span.innerHTML);
     }
 });
+
+
+
+// const copyToClipBoard = (str) =>
+// {
+//     const el = document.createElement('textarea');
+//     el.value = str;
+//     document.body.appendChild(el);
+//     el.select();
+//     document.execCommand('copy');
+//     document.body.removeChild(el);
+// };
+
+
+// function clickToCopy()
+// { 
+//     for (var i = 0; i < cssCode.length; i++) {
+//     cssCode[i].onclick = function () {
+//     var copyText = cssCode[i].textContent;
+
+
+//     copyToClipBoard(copyText);
+//         }}
+// }
+
+// clickToCopy();
