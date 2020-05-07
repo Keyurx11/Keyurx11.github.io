@@ -4,14 +4,11 @@
 
 #main {
     width: 100%;
+    height: 100vh;
     padding-top: 45px;
     padding-bottom: 100px;
     background: linear-gradient(90deg, #00c9ff, #92fe9d);
 
-}
-
-.nav-link {
-    color: black;
 }
 
 #right {
@@ -39,10 +36,15 @@
 }
 
 h1 {
-    padding-top: 30px;
+    padding-top: 50px;
     text-decoration: underline;
     font-weight: bold;
 }
+
+.colorCodeContainer {
+    padding-top: 20px;
+}
+
 
 span {
     box-shadow: 1px 1px 2px;
@@ -55,10 +57,6 @@ span:hover {
     cursor: pointer;
 }
 
-li {
-    list-style: none;
-}
-
 .btn {
     background-color: transparent !important;
     color: black !important;
@@ -71,29 +69,18 @@ li {
     box-shadow: 1px 1px 3px !important;
 }
 
-.cssCodeBtns {
-    margin-top: 10px;
-}
-
-#yourFav {
+/*#yourFav {
     text-decoration: underline;
     ;
-}
+}*/
 
-.btn {
-    background-color: transparent !important;
-    color: black !important;
-    border-radius: 5px !important;
-    border: 1px solid black !important;
-    padding-top: 1px !important;
-}
-
-.btn:hover {
-    box-shadow: 1px 1px 3px !important;
-}
-
-.cssCodeBtns {
+.addToFavBtn,
+.viewFavBtn {
     margin-top: 10px;
+}
+
+.customizeGradient {
+    padding-top: 20px;
 }
 
 #randomizerBtn {
@@ -109,6 +96,7 @@ li {
 #fav {
     background-color: white;
     text-align: center;
+    padding-top: 50px;
 
 }
 
@@ -121,39 +109,21 @@ li {
 
 
 .li {
+    list-style: none;
     width: 350px;
     height: 200px;
-    padding: 150px 15px 10px 15px;
+    padding: 85px 15px 10px 15px;
     margin: 10px;
-}
-
-/*.li:hover {
-    width: 100%;
-}
-*/
-
-.carousel-item {
-    width: 100%;
-    height: 350px;
 }
 
 #deleteAllBtn {
     margin-bottom: 20px;
 }
 
-.previewBtn {
-    margin-bottom: 10px;
-}
-
 a {
     color: black !important;
 }
 
-a:hover {
-    text-decoration: none !important;
+.header-link:hover {
+    text-decoration: underline !important;
 }
-/*
-#previewContainer {
-    width: 100%;
-    height: 500px;
-}*/
