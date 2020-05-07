@@ -11,8 +11,10 @@ var previewBtn = document.getElementsByClassName('previewBtn')
 var cssCode = document.getElementsByClassName('cssCode')
 var body = document.getElementById('main')
 var previewContainer = document.getElementById('previewContainer')
+var span = document.querySelector('span')
 
-// SAVE GRADIENTS
+// SAVE GRADIENTS to Local Storage
+
 var ul = document.getElementById('ul')
 var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
@@ -23,7 +25,7 @@ var liMaker = (text) => {
 
     var li = document.createElement('li');
     // li.textContent = text;
-    li.className = "li displayFav";
+    li.className = "li displayFav liCssEffect";
     li.style.background = text;
 
     var cssCode = document.createElement("p");
@@ -42,7 +44,9 @@ var liMaker = (text) => {
     createA.appendChild(previewBtn);
     li.appendChild(createA);
     ul.appendChild(li);
+
     previewBtnFunction();
+    clickToCopy();
 }
 
 function addGradientToList() {
@@ -65,10 +69,7 @@ deleteAllBtn.addEventListener('click', function() {
     itemsArray = [];
 });
 
-// End of Save GRADIENTS
-
-
-// FUNCTIONS
+// End of Save GRADIENTS to Local Storage
 
 function colorInput() {
     body.style.background = "linear-gradient(" +
@@ -111,6 +112,7 @@ function randomizeColor() {
     color2.value = randomColor2
 
     nameGradientDisplay();
+    clickToCopy();
 }
 
 
@@ -164,10 +166,40 @@ function previewBtnFunction() {
     for (var i = 0; i < previewBtn.length; i++) {
         previewBtn[i].onclick = function() {
             body.style.background = this.parentNode.parentNode.childNodes[0].innerHTML;
+            nameGradient.innerHTML = this.parentNode.parentNode.childNodes[0].innerHTML;
         }
     }
 }
 
+
+// Start of Copy text
+
+var copyToClipBoard = (str) => {
+    var el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+};
+
+
+function clickToCopy() {
+    for (var i = 0; i < cssCode.length; i++) {
+        cssCode[i].onclick = function() {
+            var copyText = this.textContent;
+            copyToClipBoard(copyText);
+            alert("Copied: " + copyText);
+        }
+    }
+}
+
+function copySpanText() {
+    copyToClipBoard(span.textContent)
+    alert("Copied: " + span.textContent);
+}
+
+// End of Copy Text
 
 
 color1.addEventListener("input", colorInput);
@@ -176,48 +208,4 @@ randomizerBtn.addEventListener("click", randomizeColor);
 slider.addEventListener("input", randomizeAngle);
 customAngle.addEventListener("input", customAngleRot);
 saveGradient.addEventListener("click", addGradientToList);
-
-
-
-
-// FOR COPY PASTE
-var span = document.querySelector('span')
-span.onclick = function() {
-    document.execCommand("copy");
-}
-
-span.addEventListener("copy", function(event) {
-    event.preventDefault();
-    if (event.clipboardData) {
-        event.clipboardData.setData("text/plain", span.textContent);
-        console.log(event.clipboardData.getData("text"))
-    } {
-        alert("Copied: " + span.innerHTML);
-    }
-});
-
-
-
-// const copyToClipBoard = (str) =>
-// {
-//     const el = document.createElement('textarea');
-//     el.value = str;
-//     document.body.appendChild(el);
-//     el.select();
-//     document.execCommand('copy');
-//     document.body.removeChild(el);
-// };
-
-
-// function clickToCopy()
-// { 
-//     for (var i = 0; i < cssCode.length; i++) {
-//     cssCode[i].onclick = function () {
-//     var copyText = cssCode[i].textContent;
-
-
-//     copyToClipBoard(copyText);
-//         }}
-// }
-
-// clickToCopy();
+span.addEventListener("click", copySpanText);
