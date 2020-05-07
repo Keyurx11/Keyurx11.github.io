@@ -21,59 +21,51 @@ var data = JSON.parse(localStorage.getItem('items'));
 
 var liMaker = (text) => {
 
-  var li = document.createElement('li');
-  // li.textContent = text;
-  li.className = "li displayFav";
-  li.style.background = text;
+    var li = document.createElement('li');
+    // li.textContent = text;
+    li.className = "li displayFav";
+    li.style.background = text;
 
-  var cssCode = document.createElement("p");
-  cssCode.textContent = text;
-  cssCode.className = "cssCode";
-  li.appendChild(cssCode);
-  
-  // var previewBtn = document.createElement('button')
-  // var namePreviewBtn = document.createTextNode('Preview')
-  // // previewBtn.setAttribute('href', "#previewContainer");
-  // previewBtn.appendChild(namePreviewBtn);
-  // previewBtn.className = "previewBtn btn btn-primary btn-sm";
+    var cssCode = document.createElement("p");
+    cssCode.textContent = text;
+    cssCode.className = "cssCode";
+    li.appendChild(cssCode);
 
-  // li.appendChild(previewBtn);
-  ul.appendChild(li);
-  previewBtnFunction();
+    // var previewBtn = document.createElement('button')
+    // var namePreviewBtn = document.createTextNode('Preview')
+    // // previewBtn.setAttribute('href', "#previewContainer");
+    // previewBtn.appendChild(namePreviewBtn);
+    // previewBtn.className = "previewBtn btn btn-primary btn-sm";
+
+    // li.appendChild(previewBtn);
+    ul.appendChild(li);
+    // previewBtnFunction();
 }
 
 function addGradientToList() {
     itemsArray.push(span.innerHTML);
     localStorage.setItem('items', JSON.stringify(itemsArray));
     liMaker(span.innerHTML);
-  };
+    alert("Added to Favourites!");
+};
 
 data.forEach(item => {
-  liMaker(item);
+    liMaker(item);
 });
 
 
-deleteAllBtn.addEventListener('click', function () {
-  localStorage.clear();
-  while (ul.firstChild) {
-    ul.removeChild(ul.firstChild);
-  }
-  itemsArray = [];
+deleteAllBtn.addEventListener('click', function() {
+    localStorage.clear();
+    while (ul.firstChild) {
+        ul.removeChild(ul.firstChild);
+    }
+    itemsArray = [];
 });
 
 // End of Save GRADIENTS
 
 
 // FUNCTIONS
-function previewBtnFunction()
-{
-    for (var i = 0; i < previewBtn.length; i++) {
-        previewBtn[i].onclick = function () {
-            previewContainer.style.background = this.parentNode.childNodes[0].innerHTML;
-
-        }}
-}
-
 
 function colorInput() {
     body.style.background = "linear-gradient(" +
@@ -165,13 +157,22 @@ function customAngleRot() {
 
 
 
+// function previewBtnFunction()
+// {
+//     for (var i = 0; i < previewBtn.length; i++) {
+//         previewBtn[i].onclick = function () {
+//             previewContainer.style.background = this.parentNode.childNodes[0].innerHTML;
+//         }}
+// }
+
+
+
 color1.addEventListener("input", colorInput);
 color2.addEventListener("input", colorInput);
 randomizerBtn.addEventListener("click", randomizeColor);
 slider.addEventListener("input", randomizeAngle);
 customAngle.addEventListener("input", customAngleRot);
 saveGradient.addEventListener("click", addGradientToList);
-
 
 
 
@@ -191,22 +192,3 @@ span.addEventListener("copy", function(event) {
         alert("Copied: " + span.innerHTML);
     }
 });
-
-
-var span = document.querySelector('span')
-span.onclick = function() {
-    document.execCommand("copy");
-}
-
-span.addEventListener("copy", function(event) {
-    event.preventDefault();
-    if (event.clipboardData) {
-        event.clipboardData.setData("text/plain", span.textContent);
-        console.log(event.clipboardData.getData("text"))
-    } {
-        alert("Copied: " + span.innerHTML);
-    }
-});
-
-
-

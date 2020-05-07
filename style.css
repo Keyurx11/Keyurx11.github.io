@@ -2,13 +2,14 @@
     text-align: center;
 }
 
-#main{
+#main {
     width: 100%;
-    padding-top: 35px;
+    padding-top: 45px;
     padding-bottom: 100px;
     background: linear-gradient(90deg, #00c9ff, #92fe9d);
 
 }
+
 .nav-link {
     color: black;
 }
@@ -22,7 +23,7 @@
     top: 0;
     right: 0;
     padding-top: 5px;
-    
+
 }
 
 
@@ -58,16 +59,16 @@ li {
     list-style: none;
 }
 
-.btn{
-    background-color: transparent!important;
-    color: black!important;
-    border-radius: 5px!important;
-    border: 1px solid black!important;
-    padding-top: 1px!important;
+.btn {
+    background-color: transparent !important;
+    color: black !important;
+    border-radius: 5px !important;
+    border: 1px solid black !important;
+    padding-top: 1px !important;
 }
 
 .btn:hover {
-    box-shadow: 1px 1px 3px!important;
+    box-shadow: 1px 1px 3px !important;
 }
 
 .cssCodeBtns {
@@ -75,19 +76,20 @@ li {
 }
 
 #yourFav {
-    text-decoration: underline;;
+    text-decoration: underline;
+    ;
 }
 
-.btn{
-    background-color: transparent!important;
-    color: black!important;
-    border-radius: 5px!important;
-    border: 1px solid black!important;
-    padding-top: 1px!important;
+.btn {
+    background-color: transparent !important;
+    color: black !important;
+    border-radius: 5px !important;
+    border: 1px solid black !important;
+    padding-top: 1px !important;
 }
 
 .btn:hover {
-    box-shadow: 1px 1px 3px!important;
+    box-shadow: 1px 1px 3px !important;
 }
 
 .cssCodeBtns {
@@ -97,7 +99,7 @@ li {
 #randomizerBtn {
     margin-top: 5px;
 }
- 
+
 #customAngle {
     background-color: transparent;
     border: 1px solid black;
@@ -107,7 +109,7 @@ li {
 #fav {
     background-color: white;
     text-align: center;
-  
+
 }
 
 #ul {
@@ -130,9 +132,9 @@ li {
 }
 */
 
-.carousel-item{
-width: 100%;
-height: 350px;
+.carousel-item {
+    width: 100%;
+    height: 350px;
 }
 
 #deleteAllBtn {
@@ -144,14 +146,14 @@ height: 350px;
 }
 
 a {
-    color: black!important;
+    color: black !important;
 }
 
 a:hover {
-    text-decoration: none!important;
+    text-decoration: none !important;
 }
-
+/*
 #previewContainer {
     width: 100%;
     height: 500px;
-}
+}*/
